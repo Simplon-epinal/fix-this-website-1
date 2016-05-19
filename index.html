@@ -45,11 +45,15 @@
             background-color: blue;
         }
 
+        .poulet.vert {
+            background-color: green;
+        }
+
         .image-tourne {
             position: relative;
             top: 100px;
             width: 265px;
-
+            display: inline;
             -webkit-animation: rotating 2s linear infinite;
             -moz-animation: rotating 2s linear infinite;
             -ms-animation: rotating 2s linear infinite;
@@ -104,7 +108,7 @@
                     Nos poulets
                 </a>
                 <a class="list-group-item poulet rouge">Poulets rouges</a>
-                <a class="list-group-item bleu">Poulets bleus</a>
+                <a class="list-group-item poulet bleu">Poulets bleus</a>
                 <a class="list-group-item poulet vert">Poulets verts</a>
                 <a class="list-group-item disabled">
                     Notre société
@@ -120,7 +124,7 @@
 
             <button class="btn btn-primary btn-poulet-du-mois">Cliquez pour afficher le poulet du mois</button>
             <br>
-            <img src="http://www.animaloo.fr/images/photos/grandes/poulet2.JPG" class="img-poulet-du-mois image-invisible image-tourne">
+            <img src="http://www.animaloo.fr/images/photos/grandes/poulet2.JPG" class="img-poulet-du-mois image-invisible">
         </div>
     </div>
 </div>
@@ -131,6 +135,7 @@
     // action lorsque la souris arrive dessus
     titre.addEventListener('mouseenter',function(){
         // on ajoute la classe megacolor au titre
+        titre.classList.add('megacolor');
     });
     // action lorsque la souris sort de la zone
     titre.addEventListener('mouseleave',function(){
@@ -142,6 +147,11 @@
     var boutonPouletDuMois = document.querySelector('.btn-poulet-du-mois');
     var imagePouletDuMois = document.querySelector('.img-poulet-du-mois');
     boutonPouletDuMois.addEventListener('click',function(){
+    	imagePouletDuMois.classList.add('image-tourne');
+  
+    	
+    	
+
     });
 
     // décompte du temps passé sur la page
@@ -151,7 +161,7 @@
     setInterval(function(){
         totalSecondes++;
         time.innerText = totalSecondes;
-    },250);
+    },1000);
 </script>
 
 </body>
