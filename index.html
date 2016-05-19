@@ -7,19 +7,15 @@
 
     <style>
         body {
-            background-image: url(http://www.caninfelin.fr/images/produits/45302.jpg);
-        }
+            background-image: url(http://www.caninfelin.fr/images/produits/45302.jpg);}
         .container {
-            background-color: white;
-        }
+            background-color: white;}
 
         h1 {
             text-align: center;
             line-height: 60px;
             text-transform: uppercase;
-            font-weight: bold;
-            
-        }
+            font-weight: bold;}
      
         .megacolor {
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+7,0.8+7,1+19,1+81,0.8+94,0+100 */
@@ -32,9 +28,8 @@
         }
 
         .image-invisible {
-            display: visible;
+            display:none;
         }
-
         a.poulet {
             color: white;
         }
@@ -49,19 +44,16 @@
         .poulet.vert{
             background-color:green;
         }
-
         .image-tourne {
             position: relative;
             top: 100px;
             width: 265px;
-
             -webkit-animation: rotating 2s linear infinite;
             -moz-animation: rotating 2s linear infinite;
             -ms-animation: rotating 2s linear infinite;
             -o-animation: rotating 2s linear infinite;
             animation: rotating 2s linear infinite;
         }
-
         @-webkit-keyframes rotating /* Safari and Chrome */ {
             from {
                 -ms-transform: rotate(0deg);
@@ -76,24 +68,21 @@
                 -webkit-transform: rotate(360deg);
                 -o-transform: rotate(360deg);
                 transform: rotate(360deg);
-            }
-        }
+            } }
         @keyframes rotating {
             from {
                 -ms-transform: rotate(0deg);
                 -moz-transform: rotate(0deg);
                 -webkit-transform: rotate(0deg);
                 -o-transform: rotate(0deg);
-                transform: rotate(0deg);
-            }
+                transform: rotate(0deg); }
             to {
                 -ms-transform: rotate(360deg);
                 -moz-transform: rotate(360deg);
                 -webkit-transform: rotate(360deg);
                 -o-transform: rotate(360deg);
                 transform: rotate(360deg);
-            }
-        }
+            }}
     </style>
 </head>
 <body>
@@ -101,7 +90,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="megacolor">Le site de référence des poulets en plastique</h1>
+            <h1>Le site de référence des poulets en plastique</h1>
         </div>
         <div class="col-md-3">
             <div class="list-group">
@@ -109,9 +98,7 @@
                 <a class="list-group-item poulet rouge">Poulets rouges</a>
                 <a class="list-group-item poulet bleu">Poulets bleus</a>
                 <a class="list-group-item poulet vert">Poulets verts</a>
-                <a class="list-group-item disabled">
-                    Notre société
-                </a>
+                <a class="list-group-item disabled">Notre société</a>
                 <a class="list-group-item">Nos valeurs</a>
                 <a class="list-group-item">Nous contacter</a>
                 <a class="list-group-item">Notre ferme</a>
@@ -127,26 +114,28 @@
         </div>
     </div>
 </div>
-
-<script>
+<!-- SCTIPTS -->
+    <script>
     // on récupere le titre h1
     var titre = document.querySelector('h1');
     // action lorsque la souris arrive dessus
     titre.addEventListener('mouseenter',function(){
         // on ajoute la classe megacolor au titre
+        titre.setAttribute("class", "megacolor");
     });
     // action lorsque la souris sort de la zone
     titre.addEventListener('mouseleave',function(){
         // on enleve la classe megacolor du titre
-        titre.classList.remove('megacolor');
-    });
+    titre.removeAttribute("class"); });
 
     // afficher le poulet du mois
-    var boutonPouletDuMois = document.querySelector('.btn-poulet-du-mois');
-    var imagePouletDuMois = document.querySelector('.img-poulet-du-mois');
+    var boutonPouletDuMois = document.querySelector('.btn-poulet-du-mois');/*bouton*/
+    var imagePouletDuMois = document.querySelector('.img-poulet-du-mois');/*image*/
     boutonPouletDuMois.addEventListener('click',function(){
+    imagePouletDuMois.style.display='block';
+        
     });
-
+     
     // décompte du temps passé sur la page
     var time = document.querySelector('#time');
     var totalSecondes = 0;
@@ -154,7 +143,7 @@
     setInterval(function(){
         totalSecondes++;
         time.innerText = totalSecondes;
-    },250);
+    },1000);
 </script>
 
 </body>
