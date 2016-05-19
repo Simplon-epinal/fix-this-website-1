@@ -45,6 +45,10 @@
             background-color: blue;
         }
 
+        .poulet.vert {
+            background-color: green;
+        }
+
         .image-tourne {
             position: relative;
             top: 100px;
@@ -57,7 +61,7 @@
             animation: rotating 2s linear infinite;
         }
 
-        @-webkit-keyframes rotating /* Safari and Chrome */ {
+        @-webkit-keyframes rotating  { /* Safari and Chrome */
             from {
                 -ms-transform: rotate(0deg);
                 -moz-transform: rotate(0deg);
@@ -73,6 +77,24 @@
                 transform: rotate(360deg);
             }
         }
+
+         @-moz-keyframes rotating  { /* firefox */
+            from {
+                -ms-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            to {
+                -ms-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
         @keyframes rotating {
             from {
                 -ms-transform: rotate(0deg);
@@ -104,7 +126,7 @@
                     Nos poulets
                 </a>
                 <a class="list-group-item poulet rouge">Poulets rouges</a>
-                <a class="list-group-item bleu">Poulets bleus</a>
+                <a class="list-group-item poulet bleu">Poulets bleus</a>
                 <a class="list-group-item poulet vert">Poulets verts</a>
                 <a class="list-group-item disabled">
                     Notre société
@@ -131,6 +153,7 @@
     // action lorsque la souris arrive dessus
     titre.addEventListener('mouseenter',function(){
         // on ajoute la classe megacolor au titre
+        titre.classList.add('megacolor');
     });
     // action lorsque la souris sort de la zone
     titre.addEventListener('mouseleave',function(){
@@ -142,6 +165,7 @@
     var boutonPouletDuMois = document.querySelector('.btn-poulet-du-mois');
     var imagePouletDuMois = document.querySelector('.img-poulet-du-mois');
     boutonPouletDuMois.addEventListener('click',function(){
+        imagePouletDuMois.classList.remove('image-invisible');
     });
 
     // décompte du temps passé sur la page
@@ -151,7 +175,7 @@
     setInterval(function(){
         totalSecondes++;
         time.innerText = totalSecondes;
-    },250);
+    },1000); /* parce que c'est en millisecondes pardi !*/
 </script>
 
 </body>
