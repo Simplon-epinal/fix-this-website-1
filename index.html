@@ -45,6 +45,10 @@
             background-color: blue;
         }
 
+         .poulet.vert {
+            background-color: green;
+        }
+
         .image-tourne {
             position: relative;
             top: 100px;
@@ -104,7 +108,7 @@
                     Nos poulets
                 </a>
                 <a class="list-group-item poulet rouge">Poulets rouges</a>
-                <a class="list-group-item bleu">Poulets bleus</a>
+                <a class="list-group-item poulet bleu">Poulets bleus</a>
                 <a class="list-group-item poulet vert">Poulets verts</a>
                 <a class="list-group-item disabled">
                     Notre société
@@ -142,7 +146,14 @@
     var boutonPouletDuMois = document.querySelector('.btn-poulet-du-mois');
     var imagePouletDuMois = document.querySelector('.img-poulet-du-mois');
     boutonPouletDuMois.addEventListener('click',function(){
+        this.style.backgroundColor = "red";
+        
+        function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello World";
+}
     });
+
+    
 
     // décompte du temps passé sur la page
     var time = document.querySelector('#time');
@@ -151,7 +162,7 @@
     setInterval(function(){
         totalSecondes++;
         time.innerText = totalSecondes;
-    },250);
+    },1000);
 </script>
 
 </body>
