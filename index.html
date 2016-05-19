@@ -19,7 +19,7 @@
             text-transform: uppercase;
             font-weight: bold;
         }
-        .megacolor {
+        .megacolor:hover{
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+7,0.8+7,1+19,1+81,0.8+94,0+100 */
             background: -moz-linear-gradient(top,  rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 7%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 94%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
             background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 7%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 94%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -33,6 +33,10 @@
             display: none;
         }
 
+        a.bleu {
+        	color: white;
+        }
+
         a.poulet {
             color: white;
         }
@@ -41,8 +45,12 @@
             background-color: red;
         }
 
-        .poulet.bleu {
+        .bleu {
             background-color: blue;
+        }
+
+        .poulet.vert {
+        	background-color: green;
         }
 
         .image-tourne {
@@ -96,7 +104,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Le site de référence des poulets en plastique</h1>
+            <h1 class="megacolor">Le site de référence des poulets en plastique</h1>
         </div>
         <div class="col-md-3">
             <div class="list-group">
@@ -131,11 +139,12 @@
     // action lorsque la souris arrive dessus
     titre.addEventListener('mouseenter',function(){
         // on ajoute la classe megacolor au titre
+        
     });
     // action lorsque la souris sort de la zone
     titre.addEventListener('mouseleave',function(){
         // on enleve la classe megacolor du titre
-        titre.classList.remove('megacolor');
+        
     });
 
     // afficher le poulet du mois
@@ -151,7 +160,7 @@
     setInterval(function(){
         totalSecondes++;
         time.innerText = totalSecondes;
-    },250);
+    },1000);
 </script>
 
 </body>
