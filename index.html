@@ -44,6 +44,9 @@
         .poulet.bleu {
             background-color: blue;
         }
+        .poulet.vert{
+            background-color: green;
+        }
 
         .image-tourne {
             position: relative;
@@ -104,7 +107,7 @@
                     Nos poulets
                 </a>
                 <a class="list-group-item poulet rouge">Poulets rouges</a>
-                <a class="list-group-item bleu">Poulets bleus</a>
+                <a class="list-group-item poulet bleu">Poulets bleus</a>
                 <a class="list-group-item poulet vert">Poulets verts</a>
                 <a class="list-group-item disabled">
                     Notre société
@@ -129,7 +132,7 @@
     // on récupere le titre h1
     var titre = document.querySelector('h1');
     // action lorsque la souris arrive dessus
-    titre.addEventListener('mouseenter',function(){
+    titre.addEventListener('mouseenter',function(){titre.classList.add('megacolor');
         // on ajoute la classe megacolor au titre
     });
     // action lorsque la souris sort de la zone
@@ -141,7 +144,7 @@
     // afficher le poulet du mois
     var boutonPouletDuMois = document.querySelector('.btn-poulet-du-mois');
     var imagePouletDuMois = document.querySelector('.img-poulet-du-mois');
-    boutonPouletDuMois.addEventListener('click',function(){
+    boutonPouletDuMois.addEventListener('click',function(){imagePouletDuMois.classList.remove('image-invisible');
     });
 
     // décompte du temps passé sur la page
